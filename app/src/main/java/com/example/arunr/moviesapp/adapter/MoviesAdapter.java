@@ -47,6 +47,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         String imageUrl = movieList.get(position).getPosterPath();
         Glide.with(context)
                 .load(imageUrl)
+                .placeholder(R.drawable.loading)
                 .into(viewHolder.thumbnail);
     }
 

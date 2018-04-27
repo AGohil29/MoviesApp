@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadJson();
     }
-
+    // calls the api and loads the data
     private void loadJson() {
         try {
             if (BuildConfig.THE_MOVIE_API_TOKEN.isEmpty()) {
