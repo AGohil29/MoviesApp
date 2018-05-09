@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             }
 
             Client client = new Client();
-            Service apiService = Client.getClient().create(Service.class);
+            Service apiService = client.getClient().create(Service.class);
             Call<MoviesResponse> call = apiService.getPopularMovies(BuildConfig.THE_MOVIE_API_TOKEN);
             call.enqueue(new Callback<MoviesResponse>() {
                 @Override
@@ -140,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             }
 
             Client client = new Client();
-            Service apiService = Client.getClient().create(Service.class);
+            Service apiService = client.getClient().create(Service.class);
             Call<MoviesResponse> call = apiService.getTopRatedMovies(BuildConfig.THE_MOVIE_API_TOKEN);
             call.enqueue(new Callback<MoviesResponse>() {
                 @Override

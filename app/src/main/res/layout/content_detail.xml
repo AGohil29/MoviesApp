@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,105 +9,93 @@
     tools:context="com.example.arunr.moviesapp.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            tools:showIn="@layout/activity_detail">
 
-            <TextView
-                android:id="@+id/movietitle"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="@string/name_movie"
-                android:textAlignment="center"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:padding="@dimen/padding_layout"
-                android:text="@string/name_movie"
-                android:textAlignment="textStart"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/layout_margin_top"
+                    android:padding="@dimen/padding_layout"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_constraintLeft_creator="1"
+                    tools:layout_constraintTop_creator="1" />
 
-            <TextView
-                android:id="@+id/plot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top2"
-                android:padding="@dimen/padding_layout"
-                android:text="@string/movie_details"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/user_rating"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/layout_margin_top"
+                    android:padding="@dimen/padding_layout"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    tools:layout_constraintTop_creator="1" />
 
-            <TextView
-                android:id="@+id/plotsynopsis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:padding="@dimen/padding_layout"
-                android:textAlignment="textStart"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/releasedate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/layout_margin_top"
+                    android:padding="@dimen/padding_layout"
+                    android:text="@string/release"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_rating"
+                    tools:layout_constraintTop_creator="1" />
 
-            <TextView
-                android:id="@+id/rating"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:padding="@dimen/padding_layout"
-                android:text="@string/rating"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/plotsynopsis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="@dimen/layout_margin_top"
+                    android:padding="@dimen/padding_layout"
+                    android:textAlignment="textStart"
+                    android:textSize="20sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/releasedate"
+                    tools:layout_constraintTop_creator="1" />
 
-            <TextView
-                android:id="@+id/user_rating"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:padding="@dimen/padding_layout"
-                android:text="@string/name_movie"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/thumbnailUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="invisible" />
 
-            <TextView
-                android:id="@+id/release"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:padding="@dimen/padding_layout"
-                android:text="@string/release"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/trailer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trailer"
+                    android:textSize="30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/plotsynopsis" />
 
-            <TextView
-                android:id="@+id/releasedate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="@dimen/layout_margin_top"
-                android:padding="@dimen/padding_layout"
-                android:text="@string/release"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_trailer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:scrollbars="vertical"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/trailer" />
 
-        </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
-</RelativeLayout>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
+</LinearLayout>
